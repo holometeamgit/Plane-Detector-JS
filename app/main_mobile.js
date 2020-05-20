@@ -13,6 +13,19 @@ var desriptors = null;
 var color = null;
 var cap = null;
 
+//loading opencv.js
+var scr  = document.createElement('script'),
+    head = document.head || document.getElementsByTagName('head')[0];
+    scr.src = 'assets/opencv.js';
+    scr.async = false; // optionally
+
+head.insertBefore(scr, head.firstChild);
+
+scr.onload = function() { 
+	console.log('ready');
+
+}
+
 function cameraStart() {
 	navigator.mediaDevices
 		.getUserMedia(constraints)
