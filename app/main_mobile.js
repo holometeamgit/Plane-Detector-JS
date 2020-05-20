@@ -1,6 +1,8 @@
 var logText = document.getElementById("textID");
 var video = document.getElementById("webcam")
 
+var constraints = { video: { facingMode: "environment" }, audio: false };
+
 function cameraStart() {
 	navigator.mediaDevices
 		.getUserMedia(constraints)
