@@ -2,13 +2,17 @@ var express = require('express'),
     path = require('path'),
     app = express();
 
+const https = require('https');
+const fs = require('fs');
+
+const options = {
+  key: fs.readFileSync('cert/key.pem'),
+  cert: fs.readFileSync('cert/cert.pem')
+};
+
 app.set('port', (process.env.PORT || 8080));
 
-app.use(express.static('public'));
+app.use(express.static('app'));
 
-app.listen(app.get('port'), function(err) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log('Running on port: ' + app.get('port')); }
-});
+var server  = require('https').createServer(options, app);
+server.listen(8080);
