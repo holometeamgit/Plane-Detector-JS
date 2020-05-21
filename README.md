@@ -40,4 +40,5 @@ https://<Local IP Address>:<port number>
 
 - press start button
 - accept access to camera
-- point the camera at hori
+- point the camera at horizontal plane
+- press place button
